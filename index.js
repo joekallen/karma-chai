@@ -6,6 +6,8 @@ var pattern = function(file) {
 
 var framework = function(files) {
   files.unshift(pattern(path.join(__dirname, 'adapter.js')));
+  files.unshift(pattern(path.resolve(require.resolve('sinon-chai'))));
+  files.unshift(pattern(path.resolve(require.resolve('sinon'), '../../pkg/sinon.js')));
   files.unshift(pattern(path.resolve(require.resolve('chai-properties'))));
   files.unshift(pattern(path.resolve(require.resolve('chai-as-promised'))));
   files.unshift(pattern(path.resolve(require.resolve('lodash'))));

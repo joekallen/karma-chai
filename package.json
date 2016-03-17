@@ -11,5 +11,12 @@
     "url": "git@git.tm.tmcs:ism/karma-chai.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.2.0",
+    "chai-properties": "^1.2.1",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0"
+  }
 }
