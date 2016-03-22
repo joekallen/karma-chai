@@ -3,13 +3,14 @@
   window.assert = window.chai.expect;
   window.Assert = window.chai.assert;
 
-  window.spy = function(){
-    var sinon = window.sinon;
-    sinon.spy.apply(sinon,arguments)
+  var createWindowWrapper = function createWindowWrapper(type) {
+    window[type] = function () {
+      var sinon = window.sinon;
+      sinon[type].apply(sinon, arguments)
+    };
   };
 
-  window.stub = function(){
-    var sinon = window.sinon;
-    sinon.stub.apply(sinon,arguments)
-  };
+  createWindowWrapper('spy');
+  createWindowWrapper('stub');
+  createWindowWrapper('mock');
 })(window);
